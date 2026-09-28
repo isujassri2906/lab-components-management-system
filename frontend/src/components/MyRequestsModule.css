@@ -1,0 +1,245 @@
+.requests-module {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 32px;
+}
+
+/* Summary Section */
+.requests-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-card h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.summary-val {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.text-pending { color: #fbbf24; }
+.text-approved { color: #4ade80; }
+.text-rejected { color: #f87171; }
+
+/* Controls (Search & Filter) */
+.requests-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.search-box svg {
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+  margin-right: 12px;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  width: 100%;
+  outline: none;
+}
+
+.filter-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-select label {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.filter-select select {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.filter-select select:focus {
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+/* Table */
+.requests-list-container {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.requests-table-wrapper {
+  overflow-x: auto;
+}
+
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.requests-table th, 
+.requests-table td {
+  padding: 16px 24px;
+}
+
+.requests-table th {
+  background: rgba(0, 0, 0, 0.2);
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.requests-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.request-row {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.request-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.td-comp-name {
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.td-comp-code {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.status-approved {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+.status-pending {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.status-rejected {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+/* Modal */
+.request-details-modal {
+  max-width: 450px !important;
+}
+
+.req-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.req-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.req-stat-label {
+  color: #94a3b8;
+}
+
+.req-stat-value {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .requests-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-box {
+    max-width: 100%;
+  }
+}

@@ -80,6 +80,42 @@
   border-radius: 0 8px 8px 0;
 }
 
+.nav-submenu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-submenu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  margin-top: 4px;
+  gap: 4px;
+}
+
+.nav-submenu-item {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-submenu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+.nav-submenu-item.active {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.08);
+}
+
 .sidebar-footer {
   padding: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
