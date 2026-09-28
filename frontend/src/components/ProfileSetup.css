@@ -1,0 +1,57 @@
+.profile-setup-container {
+  width: 100%;
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-setup-container.embedded {
+  max-width: 100%;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.profile-setup-container h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+.read-only-input {
+  background: rgba(0, 0, 0, 0.4) !important;
+  color: #94a3b8 !important;
+  cursor: not-allowed;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
