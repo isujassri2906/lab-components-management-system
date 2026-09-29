@@ -28,12 +28,12 @@ const MyRequestsModule = () => {
   const filteredRequests = useMemo(() => {
     return mockRequests.filter(req => {
       const query = searchQuery.toLowerCase().trim();
-      const matchesSearch = !query || 
-                            req.componentName.toLowerCase().includes(query) || 
-                            req.componentCode.toLowerCase().includes(query);
+      const matchesSearch = !query ||
+        req.componentName.toLowerCase().includes(query) ||
+        req.componentCode.toLowerCase().includes(query);
       const matchesStatus = statusFilter === 'All' || req.status === statusFilter;
       const matchesCategory = categoryFilter === 'All' || req.category === categoryFilter;
-      
+
       return matchesSearch && matchesStatus && matchesCategory;
     });
   }, [searchQuery, statusFilter, categoryFilter]);
@@ -87,14 +87,14 @@ const MyRequestsModule = () => {
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder="Search by component name or code..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        
+
         <div className="filter-group">
           <div className="filter-select">
             <label>Status:</label>
@@ -175,7 +175,7 @@ const MyRequestsModule = () => {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            
+
             <div className="modal-info">
               <div className="modal-header-row">
                 <span className="modal-category">Category: {selectedRequest.category}</span>
@@ -183,10 +183,10 @@ const MyRequestsModule = () => {
                   {selectedRequest.status}
                 </span>
               </div>
-              
+
               <h2 className="modal-title">{selectedRequest.componentName}</h2>
               <p className="modal-code">Code: {selectedRequest.componentCode}</p>
-              
+
               <div className="req-stats-list">
                 <div className="req-stat-row">
                   <span className="req-stat-label">Request Date:</span>
@@ -201,7 +201,7 @@ const MyRequestsModule = () => {
                   <span className="req-stat-value">{selectedRequest.availableFrom ? formatDate(selectedRequest.availableFrom) : 'N/A'}</span>
                 </div>
               </div>
-              
+
               {selectedRequest.description && (
                 <div className="modal-description">
                   <h4>Request Description / Notes</h4>
